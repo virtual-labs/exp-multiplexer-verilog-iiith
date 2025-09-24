@@ -1,0 +1,2 @@
+1. Design a 4X1 MUX module using 2X1 MUX modules already built and validate them. How many 2x1 MUX modules will you require for this?
+1. Design a 8X1 MUX module using 4X1 MUX modules already built and validate them. How many 4x1 MUX modules will you require for this?
