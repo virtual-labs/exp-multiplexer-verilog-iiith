@@ -2,38 +2,106 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "In Verilog, how do you declare a 2-to-1 MUX with inputs A, B, and control signal S?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+      "a": "module mux2to1(A, B, S, Y);",
+      "b": "module mux2to1(Y, A, B, S);",
+      "c": "module mux2to1(Y, A, B);",
+      "d": "module mux2to1(Y, A, B, input S);"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      "a": "Correct! The declaration starts with 'module', followed by the name 'mux2to1', and lists the inputs A, B, S, and the output Y.",
+      "b": "Incorrect. The order of inputs and output in the module declaration is important. The correct order is (A, B, S, Y).",
+      "c": "Incorrect. The control signal S is missing from the module declaration. It should be included as an input.",
+      "d": "Incorrect. The keyword 'input' is not needed for declaring inputs in the module. The correct syntax for declaring an input is 'input [size] name;'"
       },
       "correctAnswer": "a",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "This is a Sample Question 2?",
+      "difficulty": "intermediate"
+      },
+      {
+      "question": "How can you implement a 4-to-1 MUX using Verilog code?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+      "a": "Using conditional statements like 'if-else'",
+      "b": "Using a loop structure like 'for' loop",
+      "c": "Using only always block",
+      "d": "Using functions like 'always' and 'assign'"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      "a": "Correct! A 4-to-1 MUX can be implemented using 'if-else' or 'case' conditional statements to select the desired input.",
+      "b": "Incorrect. Loop structures like 'for' loops are not used to implement MUX in Verilog.",
+      "c": "Incorrect.",
+      "d": "Incorrect. 'always' and 'assign' are used for procedural assignments and continuous assignments, respectively, but they are not the primary constructs for implementing a MUX."
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+      },
+      {
+      "question": "In a 8-to-1 MUX, how many selection lines (control lines) are required?",
+      "answers": {
+      "a": "3",
+      "b": "8",
+      "c": "1",
+      "d": "2"
+      },
+      "explanations": {
+      "a": "Correct! An 8-to-1 MUX requires 3 selection lines to select one of the 8 inputs.",
+      "b": "Incorrect. The number of selection lines is not the same as the number of inputs. ",
+      "c": "Incorrect. A single selection line can only select between two inputs, not eight.",
+      "d": "Incorrect. Two selection lines can select one of four inputs, not eight."
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+      },
+      {
+      "question": "Which Verilog statement is used to model combinational logic in a MUX?",
+      "answers": {
+      "a": "always_ff",
+      "b": "always_comb",
+      "c": "always_latch",
+      "d": "always_ff @(posedge clock)"
+      },
+      "explanations": {
+      "a": "Incorrect. 'always_ff' is used for sequential logic, not combinational logic.",
+      "b": "Correct! 'always_comb' is used to model combinational logic, ensuring that the logic inside the block is purely combinational without any sequential elements.",
+      "c": "Incorrect. 'always_latch' is used to model latch-based circuits, not combinational logic.",
+      "d": "Incorrect. 'always_ff @(posedge clock)' is used for sequential logic with a clock, not for combinational logic."
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+      },
+      {
+      "question": "In Verilog, how can you define a 4-input MUX output 'Y' based on control signals 'S0' and 'S1'?",
+      "answers": {
+      "a": "assign Y = S0 ? (S1 ? D[3] : D[2]) : (S1 ? D[1] : D[0]);",
+      "b": "assign Y = S0 ? (S1 ? D[0] : D[1]) : (S1 ? D[2] : D[3]);",
+      "c": "assign Y = S0 ? (S1 ? D[2] : D[3]) : (S1 ? D[1] : D[0]);",
+      "d": "assign Y = S0 ? (S1 ? D[1] : D[0]) : (S1 ? D[3] : D[2]);"
+      },
+      "explanations": {
+      "a": "Incorrect. This implementation does not match the correct input-output mapping for a 4-input MUX.",
+      "b": "Correct! This implementation correctly maps the inputs to the output based on the control signals 'S0' and 'S1'.",
+      "c": "Incorrect. This implementation does not match the correct input-output mapping for a 4-input MUX.",
+      "d": "Incorrect. This implementation does not match the correct input-output mapping for a 4-input MUX."
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+      },
+      {
+      "question": "What is the main advantage of using a MUX in digital circuits?",
+      "answers": {
+      "a": "Reduced power consumption",
+      "b": "Increased clock frequency",
+      "c": "Simplified circuit design",
+      "d": "Faster propagation delay"
+      },
+      "explanations": {
+      "a": "Incorrect. The power consumption of a MUX depends on the number of inputs and the technology used.",
+      "b": "Incorrect. The clock frequency is not directly affected by the presence of a MUX in the circuit.",
+      "c": "Correct! MUX simplifies circuit design by enabling the selection of one out of multiple inputs using a single control signal.",
+      "d": "Incorrect. The propagation delay of a MUX depends on the technology and size, but it does not guarantee faster propagation compared to other elements."
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
-    }
+      }
   ]
 }
