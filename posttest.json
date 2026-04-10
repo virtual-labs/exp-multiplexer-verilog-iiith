@@ -1,0 +1,107 @@
+{
+  "version": 2.0,
+      "questions": [
+        {
+          "question": "What is the purpose of the 'case' statement in Verilog MUX implementation?",
+          "answers": {
+            "a": "To define the input conditions for each data input.",
+            "b": "To declare the module and its input/output ports.",
+            "c": "To specify the behavior for each control signal combination.",
+            "d": "To optimize the MUX circuit for reduced area and power consumption."
+          },
+          "explanations": {
+            "a": "Incorrect. The 'case' statement is used to specify the behavior for each control signal combination, not for defining input conditions.",
+            "b": "Incorrect. The 'case' statement is not used to declare the module or its input/output ports.",
+            "c": "Correct! The 'case' statement helps specify the output behavior based on different combinations of control signals.",
+            "d": "Incorrect. The 'case' statement does not optimize the MUX circuit for area and power consumption; it is a behavioral construct."
+          },
+          "correctAnswer": "c",
+          "difficulty": "intermediate"
+        },
+        {
+          "question": "Which Verilog code snippet correctly implements a 2-to-1 MUX with inputs 'A', 'B', and control signal 'S'?",
+          "answers": {
+            "a": "assign Y = S ? B : A;",
+            "b": "assign Y = S ? A : B;",
+            "c": "assign Y = (S == 2) ? A : B;",
+            "d": "assign Y = (S == 2) ? A : B;"
+          },
+          "explanations": {
+            "a": "Correct! This code snippet correctly implements a 2-to-1 MUX where input 'A' is selected when control signal 'S' is '0', otherwise 'B' is selected.",
+            "b": "Incorrect. This code snippet reverses the inputs 'A' and 'B', resulting in the opposite MUX functionality.",
+            "c": "Incorrect. Verilog uses '==' for comparison, but the syntax for a MUX is simpler using '? :'.",
+            "d": "Incorrect. Verilog uses '==' for comparison, but the syntax for a MUX is simpler using '? :'."
+          },
+          "correctAnswer": "a",
+          "difficulty": "intermediate"
+        },
+        {
+          "question": "Which Verilog code snippet creates a 4-to-1 MUX with inputs 'A', 'B', 'C', 'D', and control signals 'S1' and 'S0'?",
+          "answers": {
+            "a": "always @(S1 or S0) begin Y = (S1 & S0) ? A : (S1 & ~S0) ? B : (~S1 & S0) ? C : D; end",
+            "b": "always @(S1 or S0) begin Y = (S1 & ~S0) ? A : (S1 & S0) ? B : (~S1 & S0) ? C : D; end",
+            "c": "always @(S1 or S0) begin Y = (S1 & S0) ? A : (S1 & ~S0) ? D : (~S1 & S0) ? C : B; end",
+            "d": "always @(S1 or S0) begin Y = (S1 & S0) ? A : (S1 & ~S0) ? B : (S0 & ~S1) ? C : D; end"
+          },
+          "explanations": {
+            "a": "Correct! This code snippet correctly implements a 4-to-1 MUX based on the control signals 'S1' and 'S0'.",
+            "b": "Incorrect. The order of the control signal conditions is incorrect in this code snippet.",
+            "c": "Incorrect. The order of the inputs in the code snippet is incorrect for a 4-to-1 MUX.",
+            "d": "Incorrect. The control signal conditions are incorrect in this code snippet, resulting in incorrect output mapping."
+          },
+          "correctAnswer": "a",
+          "difficulty": "advanced"
+        },
+        {
+          "question": "What is the advantage of using a MUX-based design over other logic circuits?",
+          "answers": {
+            "a": "Lower power consumption",
+            "b": "Higher clock frequency",
+            "c": "Lower area utilization",
+            "d": "Faster propagation delay"
+          },
+          "explanations": {
+            "a": "Correct! MUX-based designs can often result in lower power consumption compared to other complex logic circuits.",
+            "b": "Incorrect. The clock frequency is not directly affected by the presence of a MUX in the design.",
+            "c": "Incorrect. MUX-based designs may not necessarily have lower area utilization compared to other designs.",
+            "d": "Incorrect. The propagation delay of a MUX depends on the size and technology, but it does not guarantee faster propagation than other elements."
+          },
+          "correctAnswer": "a",
+          "difficulty": "advanced"
+        },
+        {
+          "question": "In Verilog, which data type is commonly used for MUX inputs?",
+          "answers": {
+            "a": "reg",
+            "b": "integer",
+            "c": "wire",
+            "d": "parameter"
+          },
+          "explanations": {
+            "a": "Correct! The 'reg' data type is commonly used for MUX in Verilog.",
+            "b": "Incorrect. 'integer' data type is used for numerical operations, not for MUX inputs/outputs.",
+            "c": "Incorrect. The 'wire' data type is used for connecting different modules, but it is not typically used for MUX inputs.",
+            "d": "Incorrect. 'parameter' is used to define constants, but not for MUX inputs/outputs."
+          },
+          "correctAnswer": "a",
+          "difficulty": "beginner"
+        },
+        {
+          "question": "Which Verilog code snippet correctly defines a 2-to-1 MUX with a default output 'X'?",
+          "answers": {
+            "a": "module mux2to1(input A, input B, input S, output Y); assign Y = (S == 0) ? A : B; default: Y = X; endmodule",
+            "b": "module mux2to1(input A, input B, input S, output Y); assign Y = (S == 1) ? A : B; else Y = X; endmodule",
+            "c": "module mux2to1(input A, input B, input S, output Y); assign Y = (S == 1) ? A : B; ifnone Y = X; endmodule",
+            "d": "module mux2to1(input A, input B, input S, output Y); assign Y = (S == 1) ? A : B; default: Y <= X; endmodule"
+          },
+          "explanations": {
+            "a": "Correct! This code snippet correctly defines a 2-to-1 MUX with a default output 'X' when the control signal 'S' is not 0 or 1.",
+            "b": "Incorrect. The 'else' keyword is not used in 'case' statements; 'default' should be used instead.",
+            "c": "Incorrect. The 'ifnone' keyword is not used in 'case' statements; 'default' should be used instead.",
+            "d": "Incorrect. The assignment syntax '<=' is not used in 'case' statements; '=' should be used instead."
+          },
+          "correctAnswer": "a",
+          "difficulty": "advanced"
+        }
+      ]
+    }
